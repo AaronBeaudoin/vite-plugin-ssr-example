@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;400;700");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter;
+}
+
+html, body {
+  height: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#page {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  background-image:
+    linear-gradient(
+      to bottom right,
+      hsl(100, 75%, 97%),
+      hsl(200, 75%, 95%));
+}
