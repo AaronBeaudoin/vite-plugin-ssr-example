@@ -1,0 +1,8 @@
+<template>
+  <p>There are a lot of approaches to rendering pages for sites or web apps. The best mode for you will depend entirely on your project. That being said, here are some general recommendations if you are just starting out with your project.</p>
+  <p>For the best initial loading speed and SEO, and easier deployment, try to use <b>SSG</b> whenever you can. Rendering your pages to static files means you can deploy your site <b>anywhere</b>. However, this also means that any updates in your data backend will require a redeploy in order to be reflected on your pages, so only use this mode for pages that don't need to change often.</p>
+  <p>If initial loading speed and SEO are less important for your page, and the page will have <b>a lot</b> of interactivity (perhaps a web app or dashboard that won't show up in search engine results), use <b>SPA</b> mode.</p>
+  <p>If initial loading speed and SEO are <b>critical</b> for your page, and the page will have little to no interactivity (perhaps a marketing page that will show up in search engine results and/or be directed to by advertising), use <b>HTML-only</b> mode, and sprinkle in a little vanilla JavaScript precisely where you need it.</p>
+  <p>If initial <i>perceived</i> loading speed and SEO are important for your page, but the page will also need to have high interactivity (perhaps an ecommerce page that will show up in search engine results but also needs to provide user-specific pricing and cart data), use <b>SSR</b> mode. SSR is a nice compromise between the slower initial loading speed of an SPA page and the strong SEO of an HTML-only page that still accomodates high interactivity.</p>
+</template>
+
