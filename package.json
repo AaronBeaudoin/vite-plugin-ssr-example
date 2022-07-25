@@ -10,7 +10,7 @@
     "@vitejs/plugin-vue": "^3.0.1",
     "typescript": "^4.7.4",
     "vite": "^3.0.2",
-    "vite-plugin-ssr": "^0.4.10",
+    "vite-plugin-ssr": "^0.4.12",
     "vue": "^3.2.37"
   }
 }

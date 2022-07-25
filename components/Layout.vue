@@ -28,18 +28,25 @@ const modeLinks = [
 
 <template>
   <div class="panel">
-    <a href="/ssr"><h1>vite-plugin-ssr</h1></a>
+    <a href="/" class="logo">
+      <img class="logo" src="/logo.svg">
+    </a>
+    <a href="/">
+      <h1>vite-plugin-ssr</h1>
+    </a>
     <div class="links">
-      <span style="font-weight: 400;">Modes:</span>
+      <span style="font-weight: normal;">Modes:</span>
       <Link v-for="link in modeLinks" :href="link.url">{{ link.name }}</Link>
     </div>
     <div class="content">
       <slot></slot>
-      <p v-if="modeLinks.map(_ => _.url).includes(pageContext.urlParsed.pathname)"
-      class="muted"><a href="/help">Which mode should I use? Is this mode the best for my project?</a></p>
+      <p v-if="pageContext.urlParsed.pathname !== `/help`"><a href="/help">{{ pageContext.urlParsed.pathname !== `/` ? `Should I use this mode for my project?` : `Which mode should I use?` }}</a></p>
     </div>
-    <div v-if="modeLinks.map(_ => _.url).includes(pageContext.urlParsed.pathname)"
-    class="status">
+    <div v-if="pageContext.urlParsed.pathname !== `/help`" class="status">
+      <a href="https://vite-plugin-ssr.com">
+        <div>Docs</div>
+        <img src="/assets/media/link.svg">
+      </a>
       <div>
         <div>Assets</div>
         <img src="/assets/media/check.svg">
@@ -60,6 +67,13 @@ const modeLinks = [
   border-radius: 20px;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   background-color: white;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  margin-top: 8px;
+  margin-bottom: 16px;
 }
 
 h1 {
@@ -111,6 +125,13 @@ h1 {
   margin-top: 16px;
 }
 
+.content hr:not(:first-child) {
+  height: 1px;
+  margin: 32px 0;
+  border: none;
+  background-color: hsl(0, 0%, 50%);
+}
+
 .status {
   display: flex;
   justify-content: flex-end;
@@ -118,11 +139,12 @@ h1 {
   margin-left: -32px;
   margin-right: -32px;
   margin-bottom: -32px;
-  padding: 16px 8px;
+  padding: 16px 24px;
   border-top: 1px solid hsl(0, 0%, 95%);
   font-weight: bold;
   font-size: 0.8em;
 }
+
 
 .status > * {
   display: flex;
@@ -130,7 +152,22 @@ h1 {
   margin: 0 8px;
 }
 
-.status > * img {
+.status > :first-child {
+  flex: 1 0 0;
+}
+
+.status > :first-child div {
+  text-decoration: underline;
+}
+
+.status > :first-child img {
+  display: block; 
+  width: 16px;
+  margin-top: -1px;
+  margin-left: 4px;
+}
+
+.status > :not(:first-child) img {
   display: block;
   width: 16px;
   margin-left: 4px;
@@ -158,6 +195,8 @@ h1 {
 
   .status {
     margin-bottom: -24px;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 </style>
