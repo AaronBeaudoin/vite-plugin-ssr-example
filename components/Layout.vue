@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import { inject } from "vue";
+import { inject, computed } from "vue";
 import Link from './Link.vue';
 
 import { PageContextBuiltIn } from "vite-plugin-ssr";
-const pageContext = inject("pageContext") as PageContextBuiltIn;
+import { PageContext } from "/pages/_default/types";
+const pageContext = inject("pageContext") as PageContextBuiltIn & PageContext;
+
+const logoUrl = import.meta.env.BASE_URL + "logo.svg";
 const publicCheckUrl = import.meta.env.BASE_URL + "check.svg";
 
 const modeLinks = [
@@ -24,12 +27,18 @@ const modeLinks = [
     name: "HTML"
   }
 ];
+
+const helpLinkText = computed(_ => {
+  const home = pageContext.urlParsed.pathname === "/";
+  if (home) return "Which mode should I use?";
+  return "Should I use this mode for my project?";
+});
 </script>
 
 <template>
   <div class="panel">
     <a href="/" class="logo">
-      <img class="logo" src="/logo.svg">
+      <img class="logo" :src="logoUrl">
     </a>
     <a href="/">
       <h1>vite-plugin-ssr</h1>
@@ -40,9 +49,11 @@ const modeLinks = [
     </div>
     <div class="content">
       <slot></slot>
-      <p v-if="pageContext.urlParsed.pathname !== `/help`"><a href="/help">{{ pageContext.urlParsed.pathname !== `/` ? `Should I use this mode for my project?` : `Which mode should I use?` }}</a></p>
+      <p v-if="!pageContext.is404 && pageContext.urlParsed.pathname !== `/help`">
+        <a href="/help">{{ helpLinkText }}</a>
+      </p>
     </div>
-    <div v-if="pageContext.urlParsed.pathname !== `/help`" class="status">
+    <div class="status">
       <a href="https://vite-plugin-ssr.com">
         <div>Docs</div>
         <img src="/assets/media/link.svg">

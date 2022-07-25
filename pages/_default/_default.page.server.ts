@@ -7,7 +7,8 @@ import "/assets/styles/index.css";
 
 export const passToClient = [
   "urlParsed",
-  "pageProps"
+  "pageProps",
+  "is404"
 ];
 
 export async function render(pageContext: PageContextBuiltIn & PageContext) {

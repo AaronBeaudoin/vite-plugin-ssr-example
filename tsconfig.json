@@ -12,6 +12,12 @@
     "baseUrl": ".",
     "paths": { "/*": ["*"] }
   },
+  "ts-node": {
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  },
   "exclude": [
     "node_modules",
     "dist"
