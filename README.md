@@ -31,7 +31,7 @@
   [Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
 
 
-### Major Dependencies
+### Adjacent Dependencies
 
 - **`@vitejs/plugin-vue`**  
   Adds `vue` support to `vite`.  
@@ -60,7 +60,7 @@
   [NPM](https://www.npmjs.com/package/shx)
 
 
-### Minor Dependencies
+### Other Dependencies
 
 - **`@vue/server-renderer`**  
   Renders Vue components outside of the browser.

@@ -30,7 +30,7 @@ const modeLinks = [
 
 const helpLinkText = computed(_ => {
   const home = pageContext.urlParsed.pathname === "/";
-  if (home) return "Which mode should I use?";
+  if (home) return "Which mode should I use for my project?";
   return "Should I use this mode for my project?";
 });
 </script>
@@ -54,17 +54,25 @@ const helpLinkText = computed(_ => {
       </p>
     </div>
     <div class="status">
-      <a href="https://vite-plugin-ssr.com">
-        <div>Docs</div>
-        <img src="/assets/media/link.svg">
-      </a>
-      <div>
-        <div>Assets</div>
-        <img src="/assets/media/check.svg">
+      <div class="external">
+        <a href="https://github.com/brillout/vite-plugin-ssr">
+          <div class="text">GitHub</div>
+          <img src="/assets/media/link.svg">
+        </a>
+        <a href="https://vite-plugin-ssr.com">
+          <div class="text">Docs</div>
+          <img src="/assets/media/link.svg">
+        </a>
       </div>
-      <div>
-        <div>Public</div>
-        <img :src="publicCheckUrl">
+      <div class="checks">
+        <div class="check">
+          <div class="text">Assets</div>
+          <img src="/assets/media/check.svg">
+        </div>
+        <div class="check">
+          <div class="text">Public</div>
+          <img :src="publicCheckUrl">
+        </div>
       </div>
     </div>
   </div>
@@ -145,44 +153,67 @@ h1 {
 
 .status {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-top: 32px;
   margin-left: -32px;
   margin-right: -32px;
   margin-bottom: -32px;
-  padding: 16px 24px;
+  padding: 16px 22px;
   border-top: 1px solid hsl(0, 0%, 95%);
   font-weight: bold;
   font-size: 0.8em;
 }
 
+.status .external,
+.status .checks {
+  flex: 0 0 0;
+  display: flex;
+}
 
-.status > * {
+.status .external a,
+.status .checks .check {
   display: flex;
   align-items: center;
-  margin: 0 8px;
+  margin: 0 10px;
 }
 
-.status > :first-child {
-  flex: 1 0 0;
-}
-
-.status > :first-child div {
+.status .external a .text {
   text-decoration: underline;
 }
 
-.status > :first-child img {
+.status .external a img {
   display: block; 
   width: 16px;
-  margin-top: -1px;
   margin-left: 4px;
 }
 
-.status > :not(:first-child) img {
+.status .checks .check img {
   display: block;
   width: 16px;
   margin-left: 4px;
   filter: invert(1) brightness(0.5) sepia(1) hue-rotate(90deg);
+}
+
+@media screen and (max-width: 425px) {
+  .status {
+    padding-right: 16px;
+  }
+
+  .status .checks {
+    margin: -3px 0;
+    padding: 3px 4px;
+    border-radius: 16px;
+    box-shadow: 0 0 3px hsl(0, 0%, 75%);
+  }
+
+  .status .checks .check,
+  .status .checks .check img {
+    margin: 0;
+  }
+
+  .status .checks .check .text {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 425px) {
@@ -206,8 +237,7 @@ h1 {
 
   .status {
     margin-bottom: -24px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 14px;
   }
 }
 </style>

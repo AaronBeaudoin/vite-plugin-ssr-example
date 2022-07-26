@@ -8,6 +8,11 @@
   font-family: Inter;
 }
 
+html {
+  /* Prevent text from growing in landscape on iOS. */
+  -webkit-text-size-adjust: 100%;
+}
+
 html, body {
   height: 100%;
 }
