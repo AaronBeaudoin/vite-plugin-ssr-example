@@ -1,72 +1,42 @@
 # `vite-plugin-ssr` Example
 
-1. `npm install`.
-2. `npm run preview`.
+A full example of [`vite-plugin-ssr`](https://vite-plugin-ssr.com) showcasing each of it's available rendering modes with [Vue](https://vuejs.org).
+
+## Getting Started
+
+1. Install project dependencies with `npm install`.
+2. Preview the build output with `npm run preview`.
+3. Go to http://localhost:3000 in your browser.
+4. Explore! 🔍
 
 
 ## Dependencies
 ### Core Dependencies
 
-- **`vite-plugin-ssr`**  
-  Flexible `vite` framework for server-side rendering.  
-  [Website](https://vite-plugin-ssr.com) |
-  [Usage Tour](https://vite-plugin-ssr.com/vue-tour)
+- **[`vite-plugin-ssr`](https://vite-plugin-ssr.com)**  
+  The reason that this repository exists. A flexible, **framework agnostic** `vite` plugin/framework for server-side rendering (SSR), but capable of even more, such as pre-rendering (SSG), server or client-only modes (SPA, HTML), and client routing. It's like a lightweight version of Next/Nuxt.js that gives you more **architectural control**. Thanks [@brillout](https://github.com/brillout) for your hard work! ❤️
 
-- **`vite`**  
-  Development server and build tool.  
-  [Website](https://vitejs.dev) |
-  [Docs](https://vitejs.dev/guide) |
-  [Config](https://vitejs.dev/config)
+- **[`vite`](https://vitejs.dev)**  
+  The world's _best_ (in my current un-humble opinion) **development server** and **build tool**, by Evan You. It's basically [Webpack](https://webpack.js.org), except you _don't_ have to spend hours writing the world's longest and ugliest `webpack.config.js`, and HMR is [actually hot](https://vitejs.dev/guide/why.html#the-problems).
 
-- **`vue`**  
-  Frontend framework of choice.  
-  [Website](https://vuejs.org) |
-  [Docs](https://vuejs.org/guide/introduction.html) |
-  [API Reference](https://vuejs.org/api)
+- **[`vue`](https://vuejs.org)**  
+  `vite-plugin-ssr` might be framework agnostic, but I'm not. Vue is the best **front-end web framework** (for now; looking at you [Svelte](https://svelte.dev)) because it is **cleaner** and **easier to work with** than React, doesn't use JSX (unless for some reason you actually want to), and still has a solid community ecosystem going. Also, Evan You wrote this one too. Maybe he's one of the fabled [10x developers](https://www.google.com/search?q=10x+developer)?
 
-- **`typescript`**  
-  Makes JavaScript not suck.  
-  [Website](https://www.typescriptlang.org) |
-  [Docs](https://www.typescriptlang.org/docs) |
-  [Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
-
-
-### Adjacent Dependencies
-
-- **`@vitejs/plugin-vue`**  
-  Adds `vue` support to `vite`.  
-  [Repository](https://github.com/vitejs/vite/tree/main/packages/plugin-vue) |
-  [NPM](https://www.npmjs.com/package/@vitejs/plugin-vue)
-
-- **`ts-node`**  
-  Run `.ts` files with a single command.  
-  [Website](https://typestrong.org/ts-nodes) |
-  [Docs](https://typestrong.org/ts-node/docs) |
-  [API Reference](https://typestrong.org/ts-node/api)
-
-- **`express`**  
-  Minimal web server for previewing.  
-  [Website](https://expressjs.com) |
-  [API Reference](https://expressjs.com/en/4x/api.html)
-
-- **`npm-run-all`**  
-  Cross-platform sequential or parallel NPM scripts.  
-  [Repository](https://github.com/mysticatea/npm-run-all) |
-  [NPM](https://www.npmjs.com/package/npm-run-all)
-
-- **`shx`**  
-  Cross-platform UNIX commands in NPM scripts.  
-  [Repository](https://github.com/shelljs/shx) |
-  [NPM](https://www.npmjs.com/package/shx)
+- **[`typescript`](https://www.typescriptlang.org)**  
+  Makes JavaScript not suck. I guarantee you, if you're not using TypeScript, your code code has [more bugs](https://earlbarr.com/publications/typestudy.pdf) than mine. Also, TypeScript ranks [very](https://insights.stackoverflow.com/survey/2020#most-loved-dreaded-and-wanted) [highly](https://survey.stackoverflow.co/2022/#section-most-loved-dreaded-and-wanted-programming-scripting-and-markup-languages) among developer satisfaction, so it's definitely doing _something_ right. It's simply a **superset** of JavaScript that **adds syntax for types**.
 
 
 ### Other Dependencies
 
-- **`@vue/server-renderer`**  
-  Renders Vue components outside of the browser.
-- **`sirv`**  
-  Lightweight static asset middleware for `express`.
+- **[`@vitejs/plugin-vue`](https://www.npmjs.com/package/@vitejs/plugin-vue)**  
+  Adds `vue` support to `vite`.
+
+- **[`express`](https://www.npmjs.com/package/express)** + **[`sirv`](https://www.npmjs.com/package/sirv)**  
+  The server setup used to preview build output.
+
+- **[`ts-node`](https://www.npmjs.com/package/ts-node)**  
+  Run `.ts` files directly from the command line.
+
 - **`@types/node`**  
-  Provides TypeScript type definitions for Node.js.
-- **`@types/express`**  
-  Provides TypeScript type definitions for `express`.
+  **`@types/express`**  
+  TypeScript type definitions.

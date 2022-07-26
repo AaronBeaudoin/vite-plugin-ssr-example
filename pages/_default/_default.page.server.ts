@@ -1,6 +1,6 @@
 import { PageContextBuiltIn } from "vite-plugin-ssr";
 import { PageContext } from "./types";
-import { renderToString } from "@vue/server-renderer";
+import { renderToString } from "vue/server-renderer";
 import { escapeInject, dangerouslySkipEscape } from "vite-plugin-ssr";
 import { createPageApp } from "./app";
 import "/assets/styles/index.css";
