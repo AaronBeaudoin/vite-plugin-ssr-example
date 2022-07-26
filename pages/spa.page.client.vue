@@ -1,7 +1,3 @@
-<script lang="ts">
-export const doNotPrerender = true;
-</script>
-
 <script setup lang="ts">
 import InlineCode from "/components/InlineCode.vue";
 </script>
