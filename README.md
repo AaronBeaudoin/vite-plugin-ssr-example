@@ -10,8 +10,7 @@ A full example of [`vite-plugin-ssr`](https://vite-plugin-ssr.com) showcasing ea
 4. Explore! 🔍
 
 
-## Dependencies
-### Core Dependencies
+## Core Dependencies
 
 - **[`vite-plugin-ssr`](https://vite-plugin-ssr.com)**  
   The reason that this repository exists. A flexible, **framework agnostic** `vite` plugin/framework for server-side rendering (SSR), but capable of even more, such as pre-rendering (SSG), server or client-only modes (SPA, HTML), and client routing. It's like a lightweight version of Next/Nuxt.js that gives you more **architectural control**. Thanks [@brillout](https://github.com/brillout) for your hard work! ❤️
@@ -28,15 +27,9 @@ A full example of [`vite-plugin-ssr`](https://vite-plugin-ssr.com) showcasing ea
 
 ### Other Dependencies
 
-- **[`@vitejs/plugin-vue`](https://www.npmjs.com/package/@vitejs/plugin-vue)**  
-  Adds `vue` support to `vite`.
-
-- **[`express`](https://www.npmjs.com/package/express)** + **[`sirv`](https://www.npmjs.com/package/sirv)**  
-  The server setup used to preview build output.
-
-- **[`ts-node`](https://www.npmjs.com/package/ts-node)**  
-  Run `.ts` files directly from the command line.
-
-- **`@types/node`**  
-  **`@types/express`**  
-  TypeScript type definitions.
+Package Name | Description
+--- | ---
+**[`@vitejs/plugin-vue`](https://www.npmjs.com/package/@vitejs/plugin-vue)** | Adds `vue` support to `vite`.
+**[`express`](https://www.npmjs.com/package/express)** + **[`sirv`](https://www.npmjs.com/package/sirv)** | The server setup used to preview build output.
+**[`ts-node`](https://www.npmjs.com/package/ts-node)** | Run `.ts` files directly from the command line.
+**`@types/node`**, **`@types/express`** | TypeScript type definitions.
