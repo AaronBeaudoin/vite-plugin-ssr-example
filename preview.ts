@@ -9,8 +9,8 @@ app.use(sirv(`${__dirname}/dist/client`));
 app.get("*", async (request, response) => {
   const pageContext = await renderPage({ url: request.originalUrl });
   if (!pageContext.httpResponse) return response.sendStatus(200);
+  console.log(pageContext.httpResponse.statusCode, request.url);
   
-  console.log("[vite-plugin-ssr]", pageContext.httpResponse.statusCode, request.url);
   response.statusCode = pageContext.httpResponse.statusCode;
   response.contentType(pageContext.httpResponse.contentType);
   response.send(pageContext.httpResponse.body);
