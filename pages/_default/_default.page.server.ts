@@ -5,6 +5,10 @@ import { escapeInject, dangerouslySkipEscape } from "vite-plugin-ssr";
 import { createPageApp } from "./app";
 import "/assets/styles/index.css";
 
+// By default we do not want to pre-render our pages.
+// This makes pre-rendering opt-in by adding `doNotPrerender = false` to pages.
+export const doNotPrerender = true;
+
 export const passToClient = [
   "urlParsed",
   "pageProps",

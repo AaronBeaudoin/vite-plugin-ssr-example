@@ -1,6 +1,5 @@
 <script lang="ts">
 export const title = "HTML";
-export const doNotPrerender = true;
 </script>
 
 <script setup lang="ts">

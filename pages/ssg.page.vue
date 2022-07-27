@@ -1,5 +1,6 @@
 <script lang="ts">
 export const title = "SSG";
+export const doNotPrerender = false;
 </script>
 
 <script setup lang="ts">
