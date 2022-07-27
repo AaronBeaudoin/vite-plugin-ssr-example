@@ -6,9 +6,9 @@ A full example of [`vite-plugin-ssr`](https://vite-plugin-ssr.com) showcasing ea
 
 1. Install project dependencies with `npm install`.
 2. Preview a serverless deployment with `npm run preview:render`.
-2. Preview a full static deployment with `npm run preview:static`.
-3. Go to http://localhost:3000 in your browser.
-4. Explore! 🔍
+3. Preview a full static deployment with `npm run preview:static`.
+4. Go to http://localhost:3000 in your browser.
+5. Explore! 🔍
 
 
 ## Core Dependencies
