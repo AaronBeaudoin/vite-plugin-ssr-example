@@ -5,7 +5,8 @@ A full example of [`vite-plugin-ssr`](https://vite-plugin-ssr.com) showcasing ea
 ## Getting Started
 
 1. Install project dependencies with `npm install`.
-2. Preview the build output with `npm run preview`.
+2. Preview a serverless deployment with `npm run preview:render`.
+2. Preview a full static deployment with `npm run preview:static`.
 3. Go to http://localhost:3000 in your browser.
 4. Explore! 🔍
 
@@ -32,4 +33,5 @@ Package Name | Description
 **[`@vitejs/plugin-vue`](https://www.npmjs.com/package/@vitejs/plugin-vue)** | Adds `vue` support to `vite`.
 **[`express`](https://www.npmjs.com/package/express)** + **[`sirv`](https://www.npmjs.com/package/sirv)** | The server setup used to preview build output.
 **[`ts-node`](https://www.npmjs.com/package/ts-node)** | Run `.ts` files directly from the command line.
+**[`chalk`](https://www.npmjs.com/package/chalk)** | Used to add color to preview server logs.
 **`@types/node`**, **`@types/express`** | TypeScript type definitions.
