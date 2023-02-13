@@ -15,17 +15,9 @@ const modeLinks = [
     name: "SSR",
   },
   {
-    url: "/ssg",
-    name: "SSG"
-  },
-  {
     url: "/spa",
     name: "SPA"
   },
-  {
-    url: "/html",
-    name: "HTML"
-  }
 ];
 
 const helpLinkText = computed(_ => {
@@ -182,7 +174,7 @@ h1 {
 }
 
 .status .external a img {
-  display: block; 
+  display: block;
   width: 16px;
   margin-left: 4px;
 }
