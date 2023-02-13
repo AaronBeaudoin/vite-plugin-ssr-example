@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "vite",
     "preview": "vite build && wrangler dev",
-    "deploy": "vite build && wrangler publish"
+    "deploy": "vite build && wrangler publish",
+    "build": "vite build"
   },
   "dependencies": {
     "@cloudflare/kv-asset-handler": "^0.3.0",
@@ -13,7 +14,7 @@
     "ts-node": "^10.9.1",
     "typescript": "^4.7.4",
     "vite": "^4.0.3",
-    "vite-plugin-ssr": "0.4.81",
+    "vite-plugin-ssr": "^0.4.81",
     "vue": "^3.2.33",
     "wrangler": "^2.9.1"
   }
